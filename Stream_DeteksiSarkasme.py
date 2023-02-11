@@ -49,7 +49,7 @@ def prediksi(q):
     return prediksi
 
 query = st.text_area("Masukan kalimat untuk diprediksi . . .", "")
-if st.button('Say hello'):
+if st.button('Prediksi'):
     if(query!=""):
         hasil = prediksi(query)
         st.write(f"Hasil Prediksi : {hasil}")
