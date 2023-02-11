@@ -8,13 +8,13 @@ import pandas as pd
 import re
 import string
 import nltk
-from nltk.tokenize import word_tokenize
-import nltk
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 nltk.download('wordnet')
 nltk.download('all-corpora')
 nltk.download('stopwords')
+nltk.download('punkt')
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 def lower(text):
     # lowercase
