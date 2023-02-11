@@ -4,7 +4,6 @@ import preProcessingModul
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
 import nltk
-sw=nltk.corpus.stopwords.words("indonesian")
 
 # title and description
 st.subheader('#Testing-ProjectModel')
