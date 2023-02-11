@@ -9,9 +9,10 @@ import re
 import string
 import nltk
 from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
+import nltk
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-
+nltk.download('wordnet')
+nltk.download('all-corpora')
 
 def lower(text):
     # lowercase
