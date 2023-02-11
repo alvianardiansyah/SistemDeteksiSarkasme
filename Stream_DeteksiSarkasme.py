@@ -9,7 +9,7 @@ import nltk
 st.subheader('#Testing-ProjectModel')
 st.write("""
 # Deteksi Sarkasme
-Uji Coba Hanya Mendukung Bahasa Indonesia 
+Uji Coba Hanya Mendukung Bahasa Indonesia (Studi Kasus Jaringan Internet Indonesia)
 """)
 
 def prediksi(q):
