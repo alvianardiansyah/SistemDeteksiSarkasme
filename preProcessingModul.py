@@ -7,6 +7,7 @@ Created on Thu Dec 16 13:40:05 2021
 import pandas as pd
 import re
 import string
+import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
