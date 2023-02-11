@@ -182,8 +182,8 @@ def delstopwordID(teks):
 
 
 def daftarStopword():
-    #list_stopwords = stopwords.words('indonesian')
-    list_stopwords=nltk.corpus.stopwords.words("indonesian")
+    list_stopwords = stopwords.words('indonesian')
+    #list_stopwords=nltk.corpus.stopwords.words("indonesian")
     # baca tambahan
     tambahan = ['&amp', 'an', 'anms', 'anu', 'by', 'cc', 'dll', 'do', 'dst', 'fi', 'hoi', 'ic', 'id', 'in', 'jo', 'kah', 'kan', 'ke', 'klab', 'lik', 'lnk', 'meng', 'mer', 'mer', 'mu', 'nt', 'nya', 'opt', 'per', 'pu', 're', 're', 'rp', 'rpan', 'rza', 'se', 'ter', 'the', 'tj', 'tk', 'tl', 'un', 'wi', 'xx']
     list_stopwords.extend(tambahan)
