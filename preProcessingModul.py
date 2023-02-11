@@ -13,6 +13,8 @@ import nltk
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 nltk.download('wordnet')
 nltk.download('all-corpora')
+nltk.download('stopwords')
+from nltk.corpus import stopwords
 
 def lower(text):
     # lowercase
