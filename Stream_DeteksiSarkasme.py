@@ -4,13 +4,8 @@ import preProcessingModul
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
 import nltk
-
-# title and description
-st.subheader('#Testing-ProjectModel')
-st.write("""
-# Deteksi Sarkasme
-Uji Coba Hanya Mendukung Bahasa Indonesia (Studi Kasus Jaringan Internet Indonesia)
-""")
+nltk.download('stopwords')
+sw=nltk.corpus.stopwords.words("indonesian")
 
 def prediksi(q):
     DataTweet = pd.DataFrame(data=[q], columns=['Tweet'])
@@ -48,11 +43,34 @@ def prediksi(q):
     prediksi=DFpredict.iloc[0]["Prediksi"]
     return prediksi
 
-query = st.text_area("Masukan kalimat untuk diprediksi . . .", "")
-if st.button('Prediksi'):
-    if(query!=""):
-        hasil = prediksi(query)
-        st.write(f"Hasil Prediksi : {hasil}")
-    else:
-        st.write("Masukan Kalimat Terlebih Dahulu")
-    
+def side():
+    with st.sidebar:
+        genre = st.radio(
+        "Pilih Menu",
+        ('Implementasi', 'Dataset'))
+        if genre == 'Implementasi':
+            st.write("You select Implementasi.")
+        else:
+            st.write("You select Dataset.")
+        return genre
+
+cek=side()
+if(cek=='Implementasi'):
+    st.subheader('#Testing-ProjectModel')
+    st.write("""
+    # Deteksi Sarkasme
+    Uji Coba Hanya Mendukung Bahasa Indonesia 
+    """)
+    query = st.text_area("Masukan kalimat untuk diprediksi . . .", "")
+    if st.button('Prediksi',key="prediksi"):
+        if(query!=""):
+            hasil = prediksi(query)
+            st.write(f"Hasil Prediksi : {hasil}")
+        else:
+            st.write("Masukan Kalimat Terlebih Dahulu")
+if(cek=='Dataset'):
+    st.subheader('#Dataset')
+    st.write('Ini merupakan potongan dari dataset. Hasil pelatihan (training) menggunakan Support Vector Machine Ensemble mencapai nilai akurasi 77.3%')
+    namaFile="#tweet.xlsx"
+    DataTweet2 = pd.read_excel(namaFile)
+    st.dataframe(DataTweet2)  # Same as st.write(df)
